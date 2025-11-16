@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Credentials Validation</string>
+    <string name="email_cant_be_blank">Email can\'t be blank</string>
+    <string name="thats_not_a_valid_email">That\'s not a valid email!</string>
+    <string name="password_cant_be_empty">Password can\'t be empty!</string>
+    <string name="password_is_too_short">Password is too short!</string>
+    <string name="one_digit_msg">Password must contain at least one digit!</string>
+    <string name="one_lowercase_letter_msg">Password must contain at least one lowercase letter!</string>
+    <string name="one_special_character_msg">Password must contain atleast one special character!</string>
+    <string name="one_capital_letter_msg">One letter should be capital!</string>
+</resources>

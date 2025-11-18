@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.update
 import com.umermahar.credentialsvalidation.domain.utils.Result
 import kotlinx.coroutines.launch
 
-class SignupViewModel(
+class SignUpViewModel(
     private val validateEmailUseCase: ValidateEmailUseCase,
     private val validatePasswordUseCase: ValidatePasswordUseCase,
     private val validatePasswordRequirementsUseCase: ValidatePasswordRequirementsUseCase
@@ -43,7 +43,8 @@ class SignupViewModel(
                 val emailErrorRes = emailResultToUiText(inputResult)
                 _state.update { it.copy(
                     emailError = emailErrorRes,
-                    isSignUpButtonEnabled = inputResult == InputResult.VALID && it.passwordError == null && it.hasPasswordFocusedOnce
+                    isSignUpButtonEnabled = inputResult == InputResult.VALID
+                            && it.passwordError == null && it.hasPasswordFocusedOnce
                 ) }
             }
             .launchIn(viewModelScope)
@@ -60,7 +61,8 @@ class SignupViewModel(
                 _state.update { it.copy(
                     passwordError = passwordErrorRes,
                     passwordRequirements = validatePasswordRequirementsUseCase(password),
-                    isSignUpButtonEnabled = inputResult is Result.Success && it.emailError == null && it.hasEmailFocusedOnce
+                    isSignUpButtonEnabled = inputResult is Result.Success
+                            && it.emailError == null && it.hasEmailFocusedOnce
                 ) }
             }
             .launchIn(viewModelScope)
@@ -91,18 +93,17 @@ class SignupViewModel(
                     )
                 }
             }
-            is SignUpEvent.OnPasswordVisibilityChanged -> TODO()
+            is SignUpEvent.OnPasswordVisibilityChanged -> _state.update {
+                it.copy(isPasswordVisible = event.isPasswordVisible)
+            }
+
             SignUpEvent.OnSignUpButtonClick -> signUp()
         }
     }
 
     private fun signUp() = viewModelScope.launch {
-        _state.update { it.copy() }
-        if(state.value.email == "jane@gmail.com") {
-            resultChannel.send(SignUpResult.SignUpFailed)
-        } else {
-            resultChannel.send(SignUpResult.SignUpFailed)
-        }
+        // EX: API call to sign up
+        resultChannel.send(SignUpResult.SignUpFailed)
     }
 
 }

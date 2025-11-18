@@ -8,4 +8,16 @@
     <string name="one_lowercase_letter_msg">Password must contain at least one lowercase letter!</string>
     <string name="one_special_character_msg">Password must contain atleast one special character!</string>
     <string name="one_capital_letter_msg">One letter should be capital!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="run_your_world_one_step_at_a_time">Run your world, one step at a time.</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="create">Create</string>
+
+    <string name="atleast_eight_characters">At least 8 characters</string>
+    <string name="one_digit">1 digit</string>
+    <string name="one_lowercase_letter">1 lowercase character (a-z)</string>
+    <string name="one_capital_letter">1 uppercase character (A-Z)</string>
+    <string name="one_special_character">1 special character e.g. ! $ # % @</string>
+    <string name="your_password_must_contain">Your password must contain:</string>
 </resources>

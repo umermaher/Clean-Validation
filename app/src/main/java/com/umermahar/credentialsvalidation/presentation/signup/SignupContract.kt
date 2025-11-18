@@ -1,6 +1,6 @@
 package com.umermahar.credentialsvalidation.presentation.signup
 
-import com.umermahar.credentialsvalidation.domain.PasswordRequirement
+import com.umermahar.credentialsvalidation.domain.models.PasswordRequirement
 import com.umermahar.credentialsvalidation.presentation.utils.UiText
 
 data class SignUpState(

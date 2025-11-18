@@ -1,6 +1,7 @@
 package com.umermahar.credentialsvalidation.domain
 
-import com.umermahar.credentialsvalidation.domain.ValidatePasswordRequirementsUseCase.RequirementType
+import com.umermahar.credentialsvalidation.domain.models.PasswordRequirement
+import com.umermahar.credentialsvalidation.domain.models.RequirementType
 
 class ValidatePasswordRequirementsUseCase {
     operator fun invoke(password: String): List<PasswordRequirement> {
@@ -35,13 +36,4 @@ class ValidatePasswordRequirementsUseCase {
     }
 
     fun getPasswordRequirements() = this("")
-
-    enum class RequirementType {
-        AT_LEAST_EIGHT_CHARACTERS, AT_LEAST_ONE_DIGIT, AT_LEAST_ONE_SPECIAL, AT_LEAST_ONE_CAPITAL, AT_LEAST_ONE_LOWERCASE
-    }
 }
-
-data class PasswordRequirement(
-    val type: RequirementType,
-    val isFulfilled: Boolean
-)

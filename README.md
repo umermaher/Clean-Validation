@@ -8,10 +8,11 @@ Form validation with a maximum UX becomes much cleaner when driven by Kotlin Flo
 * 🧱 Code remains in Clean Architecture.
 
 # Animated Check ↔ Cross (Jetpack Compose)
+````Kotlin
 @Composable
 fun AnimatedCheckCross(
     isChecked: Boolean,
     modifier: Modifier = Modifier
 )
-
+````
 https://github.com/user-attachments/assets/3ac76dfd-d86d-4c42-8652-ddab2ff9e5a3
